@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- HEAD: info about our entire doc, links to other files, etc. IMPORTANT!!! -->
+        <!-- If we don't define the character set (always utf-8), fonts might not work -->
+        <meta charset="utf-8"/>
+        <!-- the viewport meta tag is necessary for responsive behavior 
+        if we forget to do this out media queries might not work -->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"/>
+        <!-- this title tag is the big blue link in search results and the TEXT in the browser tab - only accepts plain text -->
+        <title>HTML elements</title>
+        <!-- we can also link to our external CSS here, load scripts, define a favicon, or slug in a style tag here
+        we can also have meta data for SEO -->
+    </head>
+    <body>
+        <!-- BODY: Everything that will display in the browser  -->
+        <!-- titles/subtitles -->
+        <h1 id="top">This is a heading 1 - biggest most important text on page.
+            You should only have one h1 per page
+        </h1>
+        <h2>
+            This is a heading 2 - second biggest
+        </h2>
+        <h3> 
+            H3
+        </h3>
+        <h4>
+            H4
+        </h4>
+        <h5>
+            H5
+        </h5>
+        <h6>
+            H6
+        </h6>
+        <!-- main writing -->
+        <p>
+            paragraph!!!! This is a paragraph. <br> new line
+        </p>
+        <p> hello <em> hola (italic)</em> <strong> bonjour (bold) </strong></p>
+        <hr> 
+        <!-- line -->
+        <h2> Buttermilk pancakes</h2>
+        <p> This is a description of this amazing recipe. You should totally cook.</p>
+
+        <h3> Ingredient list</h3>
+        <!-- unordered list are for when specific labeling of the order is not important , like menu bar-->
+        <ul>
+            <li>
+                1 cup flour
+            </li>
+            <li>
+                1 cup milk
+            </li>
+            <li>
+                1 stick butter
+            </li>
+            <!-- nesting list -->
+            <li>optional spices:
+                <ul>
+                    <li> 
+                        turmeric
+                    </li>
+                    <li>
+                        cinnamon
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h3> Instructions (ordered list)</h3>
+        <ol>
+            <li> combine all ingredients in a bowl</li>
+            <li> melt in a pan over medium heat</li>
+            <li> poison  it and feed it to your annoying neighbors</li>
+            <!-- can nest and mix and match, just make sure you have correct openings and closings -->
+        </ol>
+        <hr>
+        <a href="https://sugarspunrun.com/buttermilk-pancakes/" target="_blank">
+            <!-- anchor tag, link text. need attributes. -->
+            click me! i open in a new tab
+        </a>
+        <a href="./about/boilerplate.html" target="_self"> 
+            i open another page in the same tab.
+        </a>
+        <a href="#top">
+            click me! i scroll to an id on this page
+        </a>
+        <img src=" https://www.allrecipes.com/thmb/kvvETNZfOtAptH69gUsK6FaKRKA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/21014-Good-old-Fashioned-Pancakes-mfs_001-1fa26bcdedc345f182537d95b6cf92d8.jpg"
+        alt="pancakes!"
+        width="500px" >
+        <!-- dont use inline styling with CSS -->
+        <!-- must have a source tag + alt tag with description -->
+        <img src="image/pancake_picci.webp"
+        alt="pancakes! 2"
+        
+        >
+
+
+    </body>
+</html>
