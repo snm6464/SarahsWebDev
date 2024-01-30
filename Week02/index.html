@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content = "width=device-width, initial-scale=1"/>
+        <title>HTML Form Elements</title>
+    </head>
+    <body>
+        <p>
+            Here is a form containing basic input types. 
+            sample link see <a href="" target="_blank"> sample link</a>
+        </p>
+        <!-- The form action usually contains a link to the file or API endpoint to process the form data -->
+        <form action="#" method="POST" name="contactMeForm" target="_self">
+            <!-- form tag - no spaces for contact me-->
+            <fieldset>
+                <legend>Simple Input elements</legend>
+                <p>
+                    The box adn the title of this form group are created by the fieldset and legend tags
+                </p>
+                <label for="firstName">
+                    First Name
+                </label>
+                <input name="firstName" id="firstName" type="text"/>
+                <!-- input name, label for, input id must MATCH! -->
+                <br/>
+                <label for="lastName">
+                    Last Name
+                </label>
+                <input name="lastName" id="lastName" type="text" placeholder="Massoudi" maxlength="10"/>
+                <br>
+                <label for="age">how old are you?</label>
+                <input name="age" type="number" step="2" min="0" max="200"> 
+                <br/>
+                <label for="passWord">
+                    Enter Password 
+                </label>
+                <input name="passWord" id="passWord" type="password" required placeholder="PWD" maxlength="5"/>
+            </fieldset>
+
+            <fieldset>
+                <legend>Text Areas</legend>
+                <p> text areas are great for longer text. sometimes you need to enter full sentences or paragraphs</p>
+                <label for="whyIDM"> why did you apply to IDM?</label>
+                <br>
+                <textarea name="whyIDM" cols="50" rows="100"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Check boxes</legend>
+                <p> checkboxes allow the user to select more than one option at once. checkboxes in the same group have the same name but different values.</p>
+                <label for="pet">What pets do you have?</label>
+                <br>
+                <input type="checkbox" name="pet" value="dog"/> DOG
+                <br>
+                <input type="checkbox" name="pet" value="cat" /> CAT
+                <br>
+                <input type="checkbox" name="pet" value="chicken" /> CHICKEN
+                <br>
+                <input type="checkbox" name="pet" value="none" /> NONE
+                <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>radio buttons!</legend>
+                <p> radio buttons only allow the user to select one option at once. Radio buttons in the same group habe the same name but different values</p>
+                <label for="favPet">What is your favorite pet?</label>
+                <br>
+                <input type="radio" name="favPet" value="dog"/> DOG
+                <br>
+                <input type="radio" name="favPet" value="cat" /> CAT
+                <br>
+                <input type="radio" name="favPet" value="chicken" /> CHICKEN
+                <br>
+                <input type="radio" name="favPet" value="none" /> NONE
+                <br>
+            </fieldset>
+
+            <p>Select options aka dropdowns</p>
+            <p>using the select and option tags, you can add items to a dropdown menu</p>
+            <label for="state">pick a state</label>
+            <br>
+            <select name="state">
+                <option value="NY">
+                    New York
+                </option>
+                <option value="CA" selected>
+                    California
+                </option>
+                <option value="NJ">
+                    New Jersey
+                </option>
+                <option value="OR">
+                    Oregon
+                </option>
+            </select>
+        </form>
+        <br>
+
+        <p>finall we need a button to submit our form</p>
+        <input type="button" value="submit" name="submit">
+        <!-- value shows up to the user -->
+        <button role="button" disabled >submitty </button>
+        <br>
+
+
+
+    </body>
+</html>
