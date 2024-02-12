@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Box Model w/ Inline-Block</title>
+    <!-- internal style sheet with google font import -->
+  
+    <style type="text/css">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style-type: none;
+        background-color: #a279caa1;
+        /*
+        height: 10px;
+        overflow: hidden;
+        */
+        /* online for inline block, zero out font siz
+        parent elements of items that display inline block may need to have the font size zeroed out
+        to remove the space between "characters" */
+        font-size: 0; 
+        /* now is space between */
+      }
+      li {
+        display: inline-block;
+        font-size: 1rem;
+        color: green;
+        /* x, y, optional: blur, optional: spread, color */
+        box-shadow: 5px 5px 10px #5e219ca1;
+      }
+      /* descendant selector */
+      li a {
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        text-align: center;
+        width: 200;
+        padding: 20px;
+        text-decoration: none;
+        color: #ffffff
+      }
+      li a.active {
+        background-color: rgba(255,0,255,.3);
+      }
+
+      li a:hover {
+        background-color: rgba(82, 56, 129, 0.549);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">
+            link 1
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            link 2
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            link 3
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            link 4
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

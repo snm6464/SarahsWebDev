@@ -1,0 +1,44 @@
+html, body {
+    /* html or body tags */
+    margin:0;
+}
+
+div {
+    /* border to div */
+    border: 1px solid red;
+    /* space inside the div box */
+    padding: 10px;
+}
+/* class */
+.abs-no-parent {
+    background-color: pink;
+    position: absolute;
+    /* taken out of the list of where things need to go */
+    top: 20%;
+    right:100px;
+}
+
+.rel-parent {
+    background-color: coral;
+    position: relative;
+    width: 50%;
+    top: 100px;
+    height: 100vh;
+    /* vh = viewport height, hieght works diff from width, width u can use % */
+}
+
+.abs-rel-parent {
+    background-color: rgb(186, 122, 186);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 10px;
+}
+
+header {
+    background-color: rgb(217, 74, 97);
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

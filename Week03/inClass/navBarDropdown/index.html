@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- HEAD: info about our entire doc, links to other files, etc. IMPORTANT!!! -->
+        <!-- If we don't define the character set (always utf-8), fonts might not work -->
+        <meta charset="utf-8"/>
+        <!-- the viewport meta tag is necessary for responsive behavior 
+        if we forget to do this out media queries might not work -->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"/>
+        <!-- this title tag is the big blue link in search results and the TEXT in the browser tab - only accepts plain text -->
+        <title>Nav Bar Dropdown</title>
+        <!-- we can also link to our external CSS here, load scripts, define a favicon, or slug in a style tag here
+        we can also have meta data for SEO -->
+        <style type="text/css">
+            body {
+                font-family: Helvetica, Arial, sans-serif;
+                padding: 20px 50px 150px 50px;
+                font-size: 13px;
+                text-align: center;
+                background-color: pink;
+            }
+            ul {
+                display: inline;
+                margin: 0;
+                padding: 15px 4px 17px 0;
+                list-style-type: none;
+                box-shadow: 0 0 10px rgba(128, 0, 128, 0.788);
+            }
+            ul li {
+                display: inline-block;
+                position: relative;
+                padding: 15px 10px;
+                background-color: #d43fee39;
+                transition: all 0.5s;
+            }
+
+            ul li:hover {
+                background: rgb(128, 202, 128);
+                color: rgb(37, 84, 10);
+            }
+
+            ul li ul{
+                padding:0;
+                position: absolute;
+                top: 48px;
+                left:0;
+                width: 150px;
+                box-shadow: none;
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .5s;
+            }
+
+            ul li ul li {
+                background: rgb(219, 169, 219);
+                display: block;
+                color: purple;
+                text-shadow: 0 -1px 0 rgb(238, 116, 137);
+
+            }
+            ul li ul li:hover {
+                background: #d79494;
+            }
+
+            ul li:hover ul {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                Home
+            </li>
+            <li>
+                About
+            </li>
+            <li>
+                Portfolio
+                <ul>
+                    <li>
+                        Collage
+                    </li>
+                    <li>
+                        Classwork
+                    </li>
+                    <li>
+                        Fiber Arts
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Contact
+            </li>
+        </ul>
+        
+    </body>
+</html>
