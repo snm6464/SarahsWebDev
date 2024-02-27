@@ -18,7 +18,7 @@ body {
 /* NAV  + header */
 header {
     width: 80%;
-    padding: 0 10%;
+    /* padding: 0 10%; */
     background: grey;
     height: 50px;
     overflow: hidden;
@@ -52,6 +52,11 @@ nav ul li {
     line-height: 50px;
     /* centering */
     width: 120px;
+}
+
+nav {
+    height: 100%;
+    display: block;
 }
 
 nav a {

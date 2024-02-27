@@ -1,0 +1,163 @@
+/* Universal styling */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* header + nav */
+
+header {
+    width: 100%;
+    background: rgb(255, 192, 226);
+    height: 50px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* flexbox container properties */
+    display: flex; 
+    /* only applies to one level of nesting */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.488);
+}
+
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    /* background-color: rgba(40,40,40,.1); */
+    align-items: center;
+}
+
+nav ul li {
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    /* centering */
+    width: 120px;
+}
+
+nav {
+    height: 100%;
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    transition: all 1s;
+}
+
+nav a:hover {
+    background-color: rgba(40,40,40,.5);
+    color: white;
+
+}
+
+nav a.active {
+    background-color: rgba(178, 85, 134, 0.6);
+    color: white;
+
+}
+
+/* middle */
+.wrapper {
+    padding: 50px 0 0 0;
+    display: block;
+    width: 100%;
+    background: url('../img/memphis-mini.png');
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.488);
+    background: white;
+}
+
+.title img {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form {
+    width: 50%;
+    padding: 1rem;
+}
+
+.side-img {
+    width: 25%;
+}
+
+.side-img img {
+    width: 100%;
+}
+.form legend {
+    padding: 1rem .5rem;
+}
+
+.form label {
+    padding: 1rem;
+}
+
+.form input {
+    border-radius: 5px;
+}
+
+.form textarea {
+    padding: 1rem 2rem;
+}
+
+.form fieldset {
+    border-radius: 5px;
+    padding: 1rem;
+    background: white;
+}
+
+.form .btn {
+    display: inline-block;
+    border-radius: 3px;
+    padding: .25rem;
+    background: pink;
+    margin: 1rem 0;
+}
+/* HELP: how do i get padding between input areas, how do I style the input? */
+/* footer */
+footer {
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(195, 161, 185);
+}
+
+footer a {
+    text-decoration: none;
+    height: 100%;
+    display: block;
+    color: black;
+    transition: all 1s;
+
+}
+
+/* HELP: how to make it hover over the whole height? */
+footer a:hover {
+    background-color: rgba(40,40,40,.5);
+    color: white;
+
+}
