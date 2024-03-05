@@ -1,73 +1,4 @@
-/* Universal styling */
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-/* header + nav */
-
-header {
-    width: 100%;
-    background: rgb(230, 169, 230);
-    height: 50px;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    /* flexbox container properties */
-    display: flex; 
-    /* only applies to one level of nesting */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    text-align: center;
-    /* background-color: rgba(40,40,40,.1); */
-    align-items: center;
-}
-
-nav ul li {
-    font-size: 18px;
-    height: 50px;
-    line-height: 50px;
-    /* centering */
-    width: 120px;
-}
-
-nav {
-    height: 100%;
-    display: block;
-}
-
-nav a {
-    text-decoration: none;
-    display: block;
-    color: black;
-    transition: all 1s;
-}
-
-nav a:hover {
-    background-color: rgba(40,40,40,.5);
-    color: white;
-
-}
-
-nav a.active {
-    background-color: rgba(178, 85, 134, 0.792);
-    color: white;
-
-}
 
 /* middle */
 .wrapper {
@@ -79,63 +10,71 @@ nav a.active {
 .title {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.488);
+    border-bottom: .5px solid rgba(0, 0, 0, 0.2);
+    /* background: white; */
+}
+
+.project {
+    display: block;
+    width: 100%;
     background: white;
 }
 
-.project-left {
+.project h2 {
+    text-align: center;
+    padding: 1rem 0 .5rem 0;
+}
+
+.project p {
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.img-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
 }
 
 .img-inside {
-    width: 50%;
+    width: 30%;
+
 }
 
 .img-inside img {
     width: 100%;
+    height: auto;
 }
 
-.proj-description {
-    width: 50%;
-    text-align: center;
-    
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 100px 0 0 0;
+    }
+
+    .title img{
+        width: 95%;
+    }
+
+    .img-wrapper {
+        flex-direction: column;
+        
+    }
+
+    .img-inside {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .proj-description h2 {
+        padding: 1rem;
+    }
+
+    .proj-description p {
+        padding: .5rem;
+    }
 }
 
-.proj-description h2 {
-    padding: 1rem;
-}
-
-.proj-description p {
-    padding: 0 2rem;
-}
-
-.project-right {
-    display: flex;
-    flex-direction: row-reverse;
-}
-/* footer */
-
-footer {
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgb(195, 161, 185);
-}
-
-footer a {
-    text-decoration: none;
-    height: 100%;
-    display: block;
-    color: black;
-    transition: all 1s;
-
-}
-
-/* HELP: how to make it hover over the whole height? */
-footer a:hover {
-    background-color: rgba(40,40,40,.5);
-    color: white;
-
-}

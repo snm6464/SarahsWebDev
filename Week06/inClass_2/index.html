@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modals</title>
+    <style type="text/css">
+      .button {
+        text-decoration: none;
+        color: white;
+        background-color: blueviolet;
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+      }
+
+      .info_modal {
+        /* stretch to cover the entire browser window */
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* transparent background */
+
+        background: rgba(0, 0, 0, 0.3);
+        /* make sure the modals pop up in front of everything else */
+        z-index: 9999;
+        /* start off not showing, use opacity to animate */
+        opacity: 0;
+
+        /* we always define transitions at the starting state */
+        transition: opacity 400ms ease-in-out;
+        /* disable all mouse events */
+        pointer-events: none;
+      }
+
+      .info_modal:target {
+         opacity: 1;
+         pointer-events: auto;
+      }
+
+      .info_modal > div {
+        /* look for something with a class of info_modal and find the div that is a direct child */
+        width: 300px;
+        height: 300px;
+        position: relative;
+        margin: 10% auto;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .info_modal img {
+        width: 100px;
+        height: 50px;
+      }
+
+      .close {
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top-right-radius: .25rem;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 1s ease;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <a href="#info" class="button">
+      Link to modal one
+    </a>
+    <a href="#info2" class="button">
+      Link to modal two
+    </a>
+
+    <!-- main parent div receives the ID, also acts as the transparent background cover -->
+
+    <div id="info" class="info_modal">
+      <!-- modal content -->
+      <div>
+        <!-- absolutely positioned close button -->
+        <a href="#close" class="close">X</a>
+        <!-- whatever html you want -->
+        <h2> GIVE ME MONEY</h2>
+        <p> this is the reason why you should give me money. I deserve it. I need it. I want it. Give it to me.
+          IM THE FIRST MODAL
+        </p>
+        <img src="https://placekitten.com/200/300">
+      </div>
+    </div>
+
+    <div id="info2" class="info_modal">
+      <!-- modal content -->
+      <div>
+        <!-- absolutely positioned close button -->
+        <a href="#close2" class="close">X</a>
+        <!-- whatever html you want -->
+        <h2> GIVE ME MONEY</h2>
+        <p> this is the reason why you should give me money. I deserve it. I need it. I want it. Give it to me.
+          IM THE SECOND MODAL
+        </p>
+        <img src="https://placekitten.com/200/300">
+      </div>
+    </div>
+
+  </body>
+</html>

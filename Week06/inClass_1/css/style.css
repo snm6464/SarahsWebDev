@@ -1,0 +1,167 @@
+3/* GLOBAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop first styling */
+
+
+/* JUMBOTRON */
+
+div.hero {
+    width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero article{
+    position: absolute;
+    bottom: 10%;
+    z-index: 100;
+    right: 0;
+    width: 50%;
+    padding: 2%;
+    background: linear-gradient(90deg, rgba(255,0,0,0.5) 0%, rgba(255,0,0, 0.1) 100%);
+}
+
+button, a.info {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+
+    text-transform: uppercase;
+    cursor: pointer;
+
+    text-decoration: none;
+    transition: all 1s linear;
+}
+
+button:hover, a.info:hover {
+    /* change properties here on hover */
+    color: rgb(179, 129, 179);
+    background-color: white;
+}
+
+/* PORTFOLIO THUMBNAILS */
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thumb {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+    /* same as flex: 0 0 30% or width: 30% */
+    overflow: hidden;
+    margin: 24px auto;
+}
+
+.thumb img {
+    transform: scale(1);
+    transform: rotate(0deg);
+    transition: all 1s ease;
+}
+
+.thumb:hover img {
+    transform: scale(1.5) rotate(-20deg);
+}
+/* ADD TO PORT */
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background-color: rgba(255,255,255,.5);
+    transition: all 1s ease-in-out;
+}
+
+.mask h2 {
+    margin: 0;
+}
+
+.mask p {
+    font-style: italic;
+}
+
+.thumb:hover .mask{
+    opacity: 1;
+}
+
+.thumb .mask h2,
+.thumb .mask p,
+.thumb .mask a {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 1s ease-in-out;
+}
+
+.thumb:hover .mask h2,
+.thumb:hover .mask p,
+.thumb:hover .mask a {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 1s ease-in-out;
+}
+
+/* MEDIA QUERIES */
+
+/* tablet */
+
+@media screen and (min-width: 768px) and (max-width:1024px) {
+    .hero article{
+        width: 75%;
+    }
+
+    .thumb {
+        flex-basis: 45%;
+    }
+}
+
+/* phone */
+
+@media screen and (max-width:767px) {
+
+    .container {
+        flex-direction: column;
+        padding: 12px;
+    }
+    .hero article{
+        width: 100%;
+        padding: 1rem;
+        bottom: 0;
+    }
+
+    .thumb {
+        flex-basis: 20%;
+    }
+
+}
