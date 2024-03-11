@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dynamic DOM, 2 ways</title>
+    <style type="text/css"> 
+
+      #content {
+        color: green;
+      }
+
+      @media screen and (max-width:767px) {
+        #content {
+          color: blue;
+        }
+      }
+    </style>
+
+
+    
+  </head>
+  <body>
+    <button onclick="addSingleP()">Add a single P using strings </button>
+    <button onclick="addMultiP(9)"> Add multiple Ps the right way using dom nodes</button>
+    <div id="content">
+      <p> This is some dummy text that will be overwritten by innerHTML</p>
+    </div>
+    <script type="text/javascript">
+
+      //THIS IS NOT THE GOOD WAY!!!!
+      // declare our content variable globally so that we can access it everywhere
+      var content = document.getElementById('content');
+      console.log(content);
+
+
+      function addSingleP() {
+        content.innerHTML = '<p>BADBADBADDONTDONTDONT</p>'
+      }
+
+      function addMultiP(_n) {
+        for (var i = 0; i < _n; i++) {
+          /* create a p element (node)
+          create a text node to go inside p tag
+          append the text node to the p node
+          append the p node to the html page*/
+
+          var p = document.createElement('P');
+
+          var text = document.createTextNode('Lorem ipsum paragraph ' + (i + 1));
+
+          p.appendChild(text);
+
+          content.appendChild(p);
+
+
+
+      
+        }
+      }
+      
+    </script>
+  </body>
+</html>

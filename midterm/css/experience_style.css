@@ -29,7 +29,7 @@
 .text-about {
     padding: 1rem;
     text-align: center;
-    width: 50%;
+    width: 100%;
 }
 
 .text-about ul {
@@ -52,18 +52,6 @@
     padding: .5rem;
 }
 
-.side-img {
-    padding : 1rrem;
-    width: 50%;
-}
-
-.side-img img {
-    width: 100%;
-}
-
-.bottom-img {
-    display: none;
-}
 
 
 @media screen and (max-width: 768px) {
@@ -81,9 +69,7 @@
         display: flex;
         flex-direction: column;
     }
-    .side-img {
-        display: none;
-    }
+
 
     .text-about {
         width: 90%;
@@ -96,16 +82,4 @@
     
     }
 
-    .bottom-img {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 1rem;
-
-    }
-
-    .bottom-img img {
-        width: 95%;
-    }
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event Listeners and Delegation</title>
+    <style type="text/css">
+      img {
+        display: block;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .active {
+        color: red;
+        text-shadow: 2,2,2,2 pink;
+      }
+    </style>
+
+    <script type="text/javascript">
+      let btn;
+
+      
+
+      //make our hide button globally available
+      //wait for the dom to load before executing certain lines of code
+      document.addEventListener('DOMContentLoaded', function() {
+
+        btn = document.getElementById('hideBtn');
+        //anonymous function
+        //this is usually where we assign HTML elements to variable, or where we add event listeners
+        console.log('locked and loaded!');
+        btn.addEventListener('click', toggleVisible);
+
+        document.getElementById('eventH1')
+        .addEventListener('mouseover', function(event){
+          //peep the event object that was passes into our anonymous callback function
+          console.log(event.target);
+          var el = event.target;
+          el.classList.toggle('active');
+        })
+
+        function toggleVisible() {
+          var peep = document.getElementById('chicken');
+          peep.classList.toggle('hidden');
+
+          //override hide to show
+
+          if (peep.classList.contains('hidden')) {
+            btn.innerHTML = 'Show';
+          } else {
+            btn.innerHTML = 'Hide';
+          }
+
+
+        }
+
+      })
+    </script>
+  </head>
+  <body>
+    <h1 id="eventH1">
+      This is H1 to be moused over so we can see that event object
+    </h1>
+    <button id="hideBtn"> Hide</button>
+    <img id="chicken" src="https://assets.epicurious.com/photos/62f16ed5fe4be95d5a460eed/1:1/w_2240,c_limit/RoastChicken_RECIPE_080420_37993.jpg">
+
+  </body>
+</html>

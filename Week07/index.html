@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>simple JS</title>
+    <style type="text/css">
+
+    </style>
+
+    <script type="text/javascript">
+      function toggleActive() {
+        var element = document.getElementById('changeMe');
+        if (element.classlist.contains('active')) {
+          element.classList.remove('active');
+          element.innerHTML = "i am not active anymore";
+        } else {
+          element.classList.add('active');
+          element.innerHTML = 'woohoo! I am active';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="changeMe" onclick="toggleActive()">
+      this is a heading. click me to chanhge my css and html
+    </h1>
+
+
+  </body>
+</html>

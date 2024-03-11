@@ -37,7 +37,7 @@
 }
 .piece img {
     transition: all 1s;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
 }
 
 .piece:hover img {
@@ -92,6 +92,14 @@
     transform: scale(1);
     transition: all 1s ease-in-out;
     
+}
+
+.black-text h2{
+    color: black;
+}
+
+.black-text p{
+    color: black;
 }
 
 @media screen and (max-width: 768px) {

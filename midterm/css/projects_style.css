@@ -41,13 +41,19 @@
 }
 
 .img-inside {
-    width: 30%;
+    width: 20%;
 
 }
 
 .img-inside img {
     width: 100%;
     height: auto;
+}
+
+.dress-yourself .img-inside{
+    width: 20%;
+    padding: .5rem;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -75,6 +81,12 @@
 
     .proj-description p {
         padding: .5rem;
+    }
+
+    .dress-yourself .img-inside{
+        width: 50%;
+        padding: .5rem;
+    
     }
 }
 

@@ -35,24 +35,24 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 0 0 0 1rem;
     margin-bottom: 2rem;
+    height: 600px;
 
 }
 
 .person img {
+   
     height: 100%;
+    padding-top: 1rem;
 }
 
 .clothing-wrapper {
-    display: flex;
+    /* display: flex; */
+    display: inline-block;
     position: relative;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
-    position: relative;
-    justify-content: space-evenly;
-    height: 400px;
+    height: 500px;
     padding: 1rem;
     
 }
@@ -60,31 +60,54 @@
 /* HELP: how to make click and drag */
 
 .textile {
-    width: 25vw;
+    /* width: 25vw; */
     /* padding: 2rem; */
-    position: absolute;
+    /* position: absolute; */
     z-index: 10;
     cursor: move;
+    position: absolute;
 
 }
 
-.sweater {
+#vest{
     top: 0;
-    left: 5vw;
+    left: 15vw;
+    width: 12vw;
+    
+    
+    
 }
 
-.hat {
+.textile:hover {
+    filter: drop-shadow(.5rem .5rem .5rem rgba(0,0,0,.5));
+}
+
+#hat {
     top: 0;
-    left: 37.5vw;
+    left: 45vw;
+    width: 13vw;
+    
 }
 
-.scarf {
+#scarf {
     top: 0;
     left: 70vw;
+    width:20vw;
+    
 }
 
 .textile img {
     width: 100%;
+}
+
+.mobile-img {
+    display: none;
+}
+
+.instructions {
+    width: 100%;
+    text-align: center;
+    padding-top: 1rem;
 }
 
 /* MOBILE */
@@ -99,18 +122,36 @@
     }
 
     .person {
-        margin-bottom: 1rem;
+        display: none;
     }
 
     .textile {
-        width: 25%;
-    }
-
-    .sweater {
-        left: 5vw;
+        display: none;
+       
     }
 
     .clothing-wrapper {
-        height: 200px;
+        display: none;
+    }
+
+    .mobile-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-textile {
+        width: 50%;
+        padding: 1rem;
+    }
+
+    .mobile-textile img {
+        width: 100%;
+        height: auto;
+    }
+
+    .instructions {
+        display: none;
     }
 }
