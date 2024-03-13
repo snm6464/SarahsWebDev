@@ -65,10 +65,6 @@
     
     }
     
-    .side-by-side {
-        display: flex;
-        flex-direction: column;
-    }
 
 
     .text-about {
@@ -76,9 +72,9 @@
         
     }
 
-    li {
+    .wrapper li {
     font-size: .95rem;
-    padding: .5rem;
+    /* padding: .5rem; */
     
     }
 

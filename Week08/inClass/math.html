@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- HEAD: info about our entire doc, links to other files, etc. IMPORTANT!!! -->
+        <!-- If we don't define the character set (always utf-8), fonts might not work -->
+        <meta charset="utf-8"/>
+        <!-- the viewport meta tag is necessary for responsive behavior 
+        if we forget to do this out media queries might not work -->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"/>
+        <!-- this title tag is the big blue link in search results and the TEXT in the browser tab - only accepts plain text -->
+        <title>JS math methods</title>
+        <!-- we can also link to our external CSS here, load scripts, define a favicon, or slug in a style tag here
+        we can also have meta data for SEO -->
+        <script type="text/javascript">
+            //integers
+            var x = 15; 
+            var y = 35;
+
+            //simple math functs
+
+            // addition +, subtract -, mutiplu *, divide /
+            console.log(x + y, x - y, x * y, x / y);
+
+            // mod 
+
+
+            //float, round, ceil, floor
+
+            x = Math.round(2.25);
+            y = Math.floor(2.25);
+            z = Math.ceil(2.25);
+            console.log(x,y,z);
+            //random
+
+            //returns a floating point number between 0 and 1
+
+
+            var randy = Math.random();
+            console.log(randy);
+            
+            //use math.random to get the whole numbers 0 or 1 for a bool
+
+            var yn = Math.round(randy);
+
+            if (yn === 1) {
+                console.log('heads');
+            } else {
+                console.log('tails');
+            }
+
+            //random whole number between 0 and x
+            function rand_range(_x) {
+                var rn = Math.round(_x * Math.random());
+                return rn;
+            }
+
+            console.log(rand_range(100));
+
+            function rand_range_minmax(_min,_max) {
+                var rn = Math.round(Math.random() * (_max - _min) + _min);
+                return rn;
+            }
+
+            console.log(rand_range_minmax(69,420));
+         </script>
+    </head>
+    <body>
+    
+    </body>
+</html>

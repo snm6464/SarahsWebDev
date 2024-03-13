@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- HEAD: info about our entire doc, links to other files, etc. IMPORTANT!!! -->
+        <!-- If we don't define the character set (always utf-8), fonts might not work -->
+        <meta charset="utf-8"/>
+        <!-- the viewport meta tag is necessary for responsive behavior 
+        if we forget to do this out media queries might not work -->
+        <meta name="viewport" content = "width=device-width, initial-scale=1"/>
+        <!-- this title tag is the big blue link in search results and the TEXT in the browser tab - only accepts plain text -->
+        <title>JS math methods</title>
+        <!-- we can also link to our external CSS here, load scripts, define a favicon, or slug in a style tag here
+        we can also have meta data for SEO -->
+        <script type="text/javascript">
+
+            document.addEventListener('DOMContentLoaded', function(){
+                var arrImg = ["https://d.newsweek.com/en/full/2303646/baby-goat.jpg?w=1200&f=81c50f386d0ceb2004e8b8fb063d2e9c", "https://upload.wikimedia.org/wikipedia/commons/2/23/Mountain_Goat%2C_Enchantments_Basin.jpg", "https://i.etsystatic.com/5480938/r/il/546610/328599173/il_fullxfull.328599173.jpg"];
+            var arrLink = ['https://i.etsystatic.com/5480938/r/il/546610/328599173/il_fullxfull.328599173.jpg', 'https://en.wikipedia.org/wiki/Mountain_goat', 'https://www.etsy.com/listing/97529807/baby-goat-photo-color-or-black-and-white'
+            ];
+
+            function randomIndex(max) {
+                return Math.floor(Math.random() * max);
+            }
+            
+            function loadRandomImage(){
+                var ind = randomIndex(arrImg.length);
+                var img = document.getElementById('goat');
+                var link = document.getElementById('dynLink');
+
+                img.src = arrImg[ind];
+                link.href = arrLink[ind];
+                // console.log(.href);
+            }
+            loadRandomImage();
+            })
+            
+            
+        </script>
+    </head>
+    <body>
+        <a href="#" id="dynLink"> <img src="" id="goat"> </a>
+    
+    </body>
+</html>
