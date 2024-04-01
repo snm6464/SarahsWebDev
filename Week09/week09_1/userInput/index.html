@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Input Simple</title>
+    <script>
+      //lets write a function that changes the color of the h1 on our page based on user input in a form
+      //make sure we don't try and grab any dom elems w js until the page has fully loaded
+
+      document.addEventListener("DOMContentLoaded", function() {
+        //assign html elements to vars
+        //add event listeners
+
+        let myBtn = document.getElementById('changeBtn');
+        console.log(myBtn.classList);
+        
+        myBtn.addEventListener('click', function(){
+          //grab our user number input
+
+          //convert string to number
+
+          let userNum = document.getElementById('num');
+
+          console.log(userNum.value);
+
+          let n = parseInt(userNum.value);
+
+          //grab our h1 elem and store it as a js var
+
+          let h = document.getElementbyId('changeMe');
+
+          //rather than having a laundry list of conditionals, we can use switch
+
+          switch(n) {
+            case 0:
+             h.className='red';
+             break;
+            case 1:
+              h.className='green';
+              break;
+            case 2:
+              h.className='purple';
+              break;
+
+            case 3:
+              h.className='pink';
+              break;
+            
+            default:
+              //none of the above opt
+              break;
+            
+          }
+
+
+
+        });
+
+
+
+      })
+    </script>
+    <style>
+      h1 {
+        text-transform: uppercase;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: rgb(92, 199, 92);
+      }
+
+      .purple {
+        color: rgb(135, 58, 135);
+      }
+
+      .pink {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="changeMe">GET USER INPUUUUUT</h1>
+    <form>
+      <fieldset>
+        <legend> pick a number between 0 and 3!</legend>
+        <label for="num">NUMBER NUMBER NUMBER NUMBER</label>
+        <input type="number" name="num" id="num" min="0" max="3" step="1">
+        <button type="button" id="changeBtn" class="btnClass"> SUBMIIIIIT</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

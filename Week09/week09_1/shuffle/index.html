@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shuffle</title>
+    <script>
+      let students = [
+        'Sarah',
+        'Kay',
+        'Katie',
+        'Elan',
+        'Spencer',
+        'Me',
+        'You'
+      ];
+      console.log('hell0!');
+
+      function listStudents() {
+        console.log('in function');
+
+        //grab content div
+        let content = document.getElementById('content');
+        let ol = document.createElement('OL');
+        content.appendChild(ol);
+        //loop thru student array
+
+        for (var i = 0; i < students.length; i++) {
+          let li = document.createElement('LI');
+          //grab the name of student
+
+          var current = students[i];
+
+          //pass that name into a text node
+
+          let text = document.createTextNode(current);
+
+          //add text node to li add li to ol
+
+          li.appendChild(text);
+          ol.appendChild(li);
+
+
+        };
+
+      };
+
+      function sortStudents() {
+        students.sort();
+        console.log(students);
+
+      };
+
+      function randNum(_max) {
+        return Math.floor(Math.random() * _max);
+      
+      };
+      
+      function shuffleStudents() {
+        
+        //generating random int btwn 0 and n
+        for (let i = students.length - 1; i > 0; i--) {
+          //get a random number between 0 and arraay length
+          let randomIndex = randNum(students.length);
+
+          //grab the item at the random index into a holder variable
+
+          let randomItem = students[randomIndex];
+
+          //swap the random item and the item at i
+
+          students[randomIndex] = students[i];
+
+          students[i] = randomItem;
+ 
+
+          
+        };
+
+      };
+      
+
+    </script>
+  </head>
+  <body>
+    <button onclick="listStudents()">
+      List Students
+    </button>
+    <button onclick="sortStudents()">
+      Sort Students
+    </button>
+    <button onclick="shuffleStudents()">
+      Shuffle Students
+    </button>
+    <div id="content">
+
+    </div>
+  </body>
+</html>
