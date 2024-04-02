@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Fetch!</title>
+    <script type="text/javascript">
+     //using JS fetch API
+      //ACTIVITY 1
+     async function logRandomQuote(){
+      const quote = await fetch('https://api.quotable.io/quotes/random');
+      const result = await quote.json();
+      const finQuote = result[0];
+      const msg = `${finQuote.author} inspirationingly says '${finQuote.content}'`
+      console.log(msg);
+      //const message = `${quote.author} says ${quote.}`
+     }
+
+    //ACTIVITY 3- rick and Morty
+     async function logApiResults(_num) {
+      const response = await fetch(`https://rickandmortyapi.com/api/character/${_num}`); //API endpoint goes here
+      //await will not assign response a value until it is done
+      //MUST use flag function as asynchronous whenever we use the await flag within the function
+      
+      const result = await response.json();
+      const message = `${result.name} is a ${result.species}, is from ${result.origin.name}, and is located at ${result.location.name} `;
+      console.log(result);
+      console.log(message);
+     }
+
+     function randNum(_max) {
+        return Math.floor(Math.random() * _max);
+      
+      };
+    logRandomQuote();
+     logApiResults(randNum(100));
+
+     //const NotGonnaWork = logApiResults(); //THIS WONT WORK BECAUSE of the await
+     
+     
+
+    </script>
+  </head>
+  <body></body>
+</html>

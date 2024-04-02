@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Objects and JSON</title>
+    <script type="text/javascript">
+      // initialize a new object and store it as a variable named customer
+      const customer = {
+        name: 'Tony', //name is a key, tony is a value
+        age: 23,
+        married: false,
+        pets: ['dog', 'cat', 'iguana'],
+        siblings: [
+          {name: 'Mary', age: 32, married: true},
+          {name: 'Billy', age: 16, married: false},
+        ],
+      }
+
+      //dot notation: customer.name vs bracket notation: customer['name'] 
+      //use bracket notation for variables
+
+      // Modify the customer object:
+      
+      // Change Tony's Name
+      console.log(customer.name); //tony
+      customer.name = "Tiny";
+      console.log(customer.name); //tiny
+      // add a new property defining the customers eyeColor
+      customer.eyeColor = "green";
+      console.log(customer);
+      // add the pets and siblings properties to both Mary and Billy
+      customer.siblings[0].pets = ["cat", "horse"];
+      customer.siblings[1].pets = ["shoe", "dog"];
+      customer.siblings[0].siblings = {name: 'harry', age: 100, married: false};
+      customer.siblings[1].siblings = {name: 'Silly', age: 0, married: true}
+      customer.pets.push('chicken');
+      console.log(customer);
+      // Add an Ton'ys location, be sure to include the fields: houseNumber, street name, town, city
+
+      // Log the following:
+      // Mary's marrital status
+      console.log(customer.siblings[0].married);
+      console.log(customer['siblings'][0]['married']);
+      // Tony's age
+      console.log(customer.age);
+      // All of Tony's pets
+
+      for (let i = 0; i < customer.pets.length; i++) {
+        console.log(customer.pets[i]);
+      };
+      
+      //console.log(customer.pets);
+
+      //sending the JSON
+      //sometimes we need to convert a javascript object we built ourselves into a JSON for sharing
+      // do this with JSON.stringify()
+
+      const customerJSON = JSON.stringify(customer);
+      console.log(customerJSON);
+      
+      //sometimes we receive some JSOn and we need to make it a JS object
+      const customerObj = JSON.parse(customerJSON);
+      
+    </script>
+  </head>
+  <body></body>
+</html>
