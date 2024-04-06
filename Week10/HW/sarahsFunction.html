@@ -11,7 +11,7 @@
         'https://cdn.britannica.com/18/137318-050-29F7072E/rooster-Rhode-Island-Red-roosters-chicken-domestication.jpg',
     'https://www.womansworld.com/wp-content/uploads/2019/09/cute-bunny-in-a-field-of-grass-and-white-flowers.jpg']; //array of images to choose from
                 function get_img(_word) {
-                    console.log("in the function");
+                    //console.log("in the function");
                     let word_length = _word.length;
                     var ind = 0;
                     if (word_length < 4) {
@@ -49,15 +49,31 @@
             
         </script>
         <style>
-            
+            body {
+                font-family:  Helvetica, Arial, sans-serif;
+            }
+            h1 {
+                text-align: center;
+            }
+            div {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .changeMe {
+                width: 75%;
+            }
         </style>
     </head>
     <body>
         <h1> Please enter a word, and based on the length of the word I will choose a picture.</h1>
+        <div>
         <label for="wrd">WORD!</label>
         <input type="text" name="wrd" id="wrd" > 
         <button type="button" id="changeBtn" class="btnClass"> SUBMIT</button>
-        <div>
+    </div>
+    <div>
             <img id="changeMe" src="">
         </div>
         

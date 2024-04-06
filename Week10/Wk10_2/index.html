@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fetch | Async | Await</title>
+    <!-- Today we are going to hit 2 different API endpoints and dynamically insert HTML -->
+    <!-- Rick and Morty Character Stats, change characer index to select (random) -->
+    <!-- https://rickandmortyapi.com/api/character/1 -->
+    <!-- Random Quote API Endpoint -->
+    <!-- https://quote-garden.onrender.com/api/v3/quotes/random -->
+    <!--
+    We will need to look at adding callback functions when our async functions complete
+    with .then()  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
+    -->
+    <!-- We will format our messages using template literals
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals 
+    -->
+    <!-- Write our first arrow function
+      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+    -->
+    <!-- Desctructuring Objects
+      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+    -->
+
+    <script type="text/javascript">
+      // Our handle random number within a range util from week08
+      function randNumRange(min, max) {
+        var rn = Math.round(Math.random() * (max - min) + min)
+        // return a value from our function
+        return rn
+      }
+
+      // flag the function as async, without this we cannot use await within
+      async function logApiResults() {
+        // generate a random number within our know character range
+        const randomIndex = randNumRange(0, 110)
+        // tell JS to pause until this next line resolves
+        // we can use template strings/literals here to insert our random number into the url
+        const response = await fetch(
+          `https://rickandmortyapi.com/api/character/${randomIndex}`
+        )
+        // we also need to tell JS to pause here, since it is dependent on the previous line
+        // forgetting await here will just log a Promise
+        const result = await response.json()
+        // userful methods we have access to at this point:
+        // .json() - returns the result as JSON
+        // .ok = a boolean we can use to check !response.ok means we should throw an erorr or backup message
+        // .blob() - great for fetching an image file
+
+        // More template literals to spit out a human readble sentence
+        const message = `${result.name} is a ${result.species} from ${result.origin.name}, and they are ${result.status}`
+        console.log(message)
+      }
+
+      //logApiResults()
+
+      async function fetchCharacterJSON() {
+        const randInd = randNumRange(0,110);
+        const response = await fetch(
+          `https://rickandmortyapi.com/api/character/${randInd}`
+        );
+
+        const result = await response.json();
+        return result;
+
+      }
+
+      //render our simple message in the character card div 
+      //first arrow function!
+
+      const renderCharacterInfo = (_data) => {
+        //grab an element on our page
+        const characterMessage= document.getElementById('message');
+        
+        //let's destructure our data object!!!!!
+        //we can extract any property (key, value pair) by its name (key)
+        const {name, species, origin, status} = _data;
+
+        //same as: const name = data.name or const.species = data.species
+
+        //let's format our message
+        const message = `${name} is a ${species} from ${origin.name}, and they are ${status}`;
+
+        // new way of adding html content
+        //can append our message to message div
+        
+        characterMessage.append(message);
+
+        //append will put stuff at the end of the div always
+
+      }
+
+      //lets make another function to render some fancier stuff on the page and look at some new ways to do
+
+      const renderCharacterCard = (_result) => {
+        //we need a parent element to add to
+        const parent = document.getElementById('card');
+
+        //use template literals to format some html to insert
+        const headShot = `<img src="${_result.image}"/>`
+
+        //insert adjacent html
+        parent.insertAdjacentHTML('afterbegin', headShot);
+
+        //use append and insert text into an element on the page
+        //use result.name
+
+        document.getElementById('characterName').append(_result.name);
+
+        //store our table element as a var
+        const charInfo = document.getElementById('charInfo');
+        //write this out with HTML in our html section first (for syntax)
+        const {species, origin, status} = _result;
+        const stats = `
+        <tr>
+          <th>
+            Species
+          </th>
+          <td>
+            ${species}
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Origin
+          </th>
+          <td>
+            ${origin.name}
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Status
+          </th>
+          <td>
+            ${status}
+          </td>
+        </tr>
+        `;
+        charInfo.insertAdjacentHTML('beforeend',stats);
+
+
+      };
+
+      fetchCharacterJSON().then((data) => {
+        renderCharacterInfo(data);
+        renderCharacterCard(data);
+      }).catch((error) => {
+        console.error("OOPS!!!!", error);
+      });
+
+      ////////////
+
+      const INSPO_URL = 'https://quote-garden.onrender.com/api/v3/quotes/random';
+
+      //lets make our next api call function an arrow function
+
+      const fetchInspo = async () => {
+        const response = await fetch(INSPO_URL);
+        const result = await response.json();
+
+        console.log(result.data[0]);
+
+        const {quoteAuthor, quoteText} = result.data[0];
+        //console.log(quoteAuthor, quoteText);
+
+        return {author: quoteAuthor, quote: quoteText};
+      };
+
+      fetchInspo().then((data) => {
+        //data = {author: quoteAuthor, quote: quoteText}
+        //use a new selector
+
+        const {author, quote} = data;
+        //dont bother storing the html elements as vars at all
+        //instead we are goign to chain methods
+        //query selector will find any element by its css selector 
+        //it will return the first match it finds
+        document.querySelector('#inspo .fancy').innerHTML = quote;
+        document.querySelector('#inspo .plain').innerHTML = `-${author}`;
+
+      }).catch((error) => {
+        console.error("BITCH!!!");
+      })
+
+
+
+
+
+
+    </script>
+    <style type="text/css">
+      /* Some custom fonts from google */
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+      * {
+        box-sizing: border-box;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      #card {
+        width: 25rem;
+        margin: 0 auto;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+        /* from Oribton font documentation */
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      #inspo {
+        font-family: 'Rock Salt', cursive;
+        width: 50%;
+        margin: 0 auto;
+      }
+      /* table styles */
+      table {
+        width: 100%;
+        text-align: left;
+        /* tables have a gross extra property for spacing we need to remove */
+        border-collapse: collapse;
+        margin: 1rem 0;
+        
+      }
+      /* add a border to bottom of each row */
+
+      tr {
+        border-bottom: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <h3 id="characterName"></h3>
+      <table id="charInfo">
+        
+      </table>
+      <!-- Add this for first function -->
+      <div id="message"></div>
+    </div>
+
+    <div id="inspo">
+      <p class="fancy"></p>
+      <p class="plain"></p>
+    </div>
+  </body>
+</html>
