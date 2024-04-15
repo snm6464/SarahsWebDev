@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geolocation</title>
+    <script type="text/javascript">
+      let loc;
+      document.addEventListener("DOMContentLoaded", () => {
+        loc = document.getElementById('location');
+        getLocation();
+      });
+
+      const getLocation = () => {
+        if (navigator.geolocation && navigator.geolocation.getCurrentPosition) {
+          //can call get current position function
+          //geo location exists and so does the function
+          navigator.geolocation.getCurrentPosition(setPosition, showErrors);
+        } else {
+          //no geoloc - display some sort of message to the user
+          alert('Your browser does not support geo location...');
+        }
+      }
+
+      const setPosition = (position) => {
+        
+        
+        //console.log(position.coords.latitude , position.coords.longitude);
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+      
+
+        loc.innerHTML = `<p>Latitude: ${lat} <br/> Longitude: ${lon}</p>`;
+      }
+
+      const showErrors = (error) => {
+        //alert('Your browser does not support geo location...');
+        switch(error.code){
+          case error.PERMISSION_DENIED:
+            loc.innerHTML = "BRUH DONT DENY ME...";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            loc.innerHTML = "location is unavail...";
+            break;
+
+          case error.TIMEOUT:
+            loc.innerHTML = "TIME OUT BIIIIIITCH...";
+            break;
+          case error.UNKNOWN_ERROR:
+            loc.innerHTML = "unknown... sorry...";
+            break;
+
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="location">
+      <p>Currently searching for location...</p>
+    </div>
+  </body>
+</html>
