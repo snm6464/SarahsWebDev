@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    background: #550000;
+    height: 100px;
+}
+
+header h1 {
+    padding: 3rem 0 0 0;
+    text-align: center;
+    width: 100vw;
+    font-size: 3rem;
+    color: white;
+    height: 100%;
+}
+
+.stats-reset-home {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(129, 17, 17, 0.649);
+}
+
+.happiness {
+    width: 30%;
+    /* left: 0; */
+}
+
+.home-reset-wrapper {
+    width: 50%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100%;
+}
+
+.happiness, .hunger{
+    border: black solid 1px;
+    z-index: 10;
+    position: relative;
+}
+
+.happiness p, .hunger p {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 1.5rem 0;
+}
+
+.hap-bar {
+    
+    width: 50%;
+    background-color: green;
+    height: 100%;
+}
+
+.home {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+  
+    
+}
+.home img {
+    /* idth: 100%; */
+    height: 100%;
+    
+    
+}
+
+.reset {
+    width: 50%;
+}
+
+.reset img {
+    height: 100%;
+}
+
+.hunger {
+    width: 30%;
+}
+
+.hunger-bar {
+    width: 100%;
+    background-color: green;
+    height: 100%;
+}
+
+.mid-wrapper {
+    width: 100%;
+    top: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bckg {
+    width: 50%;
+}
+
+.bckg img {
+    width: 100%;
+}
+
+.treat-wrapper {
+    width: 25%;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.treat {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pet-wrapper {
+    width: 25%;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pet {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.clothing-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.clothing {
+    position: absolute;
+}
+
+#hat {
+    left: 10vw;
+}
+
+#scarf {
+    left: 40vw;
+}
+
+#skirt {
+    right: 10vw;
+}
+
+body {
+    /* background image = barn */
+}
+
+.treat img, .pet img, .reset img, .home img {
+    border: 1px solid black;
+    cursor: grab;
+}
