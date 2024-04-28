@@ -72,4 +72,33 @@ header h1 {
     text-align: center;
 }
 
+@media screen and (max-width:768px) {
+    header h1 {
+        padding: 2rem 0 0 0;
+        text-align: center;
+        width: 100vw;
+        font-size: 3rem;
+        color: white;
+        height: 100%;
+    }
+
+    .container {
+        padding: 0rem 1rem; 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: #AA3939;
+        top: 200px;
+    }
+
+    .animal {
+        margin: 5px 0 ;
+        width: 30%;
+        border: 1px solid black;
+    }
+}
+
 

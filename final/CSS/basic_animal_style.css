@@ -91,7 +91,7 @@ header h1 {
 }
 
 .hunger-bar {
-    width: 100%;
+    width: 50%;
     background-color: green;
     height: 100%;
 }
@@ -153,6 +153,7 @@ header h1 {
 
 .clothing {
     position: absolute;
+    width: 25%;
 }
 
 #hat {
@@ -173,5 +174,75 @@ body {
 
 .treat img, .pet img, .reset img, .home img {
     border: 1px solid black;
-    cursor: grab;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    header {
+        height: 75px;
+    }
+    header h1 {
+        padding: 1.5rem 0 0 0;
+    }
+    .stats-reset-home {
+        height: 50px;
+        border-bottom: .5px rgba(0, 0, 0, 0.549) solid;
+    }
+    .reset {
+        width: 50%;
+        height: 100%;
+    }
+    .reset img {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .treat-wrapper {
+        width: 10%;
+        background-color: pink;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .treat {
+        width: 100%;
+    }
+    .treat img {
+        width: 100%;
+    }
+
+    .pet-wrapper {
+        width: 10%;
+    }
+
+    .pet img {
+        width: 100%;
+    }
+
+    .bckg {
+        width: 80%;
+    }
+
+    .clothing {
+        width: 20%;
+    }
+
+    .clothing img {
+        width: 100%;
+    }
+
+    .happiness p, .hunger p {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    
+
+
+
 }

@@ -5,6 +5,8 @@
         <title>CHICKEN</title>
         <!-- link externally here -->
         <link rel="stylesheet" type="text/css" href="../CSS/basic_animal_style.css" />
+        <script src="../JS/pet_feed.js"></script>
+    
     </head>
     <body>
         <header>
@@ -15,7 +17,7 @@
                 <p>
                     happiness
                 </p>
-                <div class="hap-bar">
+                <div class="hap-bar" id="hap-bar">
                     <!-- happiness bar -->
                 </div>
             </div>
@@ -23,7 +25,7 @@
                 <a href="./index.html"class="home">
                     <img src="https://placekitten.com/200/200">
                 </a>
-                <div class="reset">
+                <div class="reset" id="reset">
                     <img src="https://placekitten.com/200/200">
                 </div>
             </div>
@@ -32,23 +34,23 @@
                 <p>
                     hunger
                 </p>
-                <div class="hunger-bar">
+                <div class="hunger-bar" id="hunger-bar">
 
                 </div>
             </div>
         </div> 
         
         <div class="mid-wrapper">
-            <div class="treat-wrapper">
-                <div class="treat" id="treat">
+            <div class="pet-wrapper">
+                <div class="pet" id="pet">
                     <img src="https://placekitten.com/200/200">
                 </div>
             </div>
             <div class="bckg">
                 <img src="../MEDIA/chickie.png">
             </div>
-            <div class="pet-wrapper">
-                <div class="pet" id="pet">
+            <div class="treat-wrapper">
+                <div class="treat" id="treat">
                     <img src="https://placekitten.com/200/200">
                 </div>
             </div>
@@ -65,5 +67,34 @@
             <img src="https://placekitten.com/200/200">
         </div>
         </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Draggable.min.js"></script>
+        <script type="text/javascript">
+            const hat = document.getElementById("hat");
+            const scarf = document.getElementById("scarf");
+            const skirt = document.getElementById("skirt");
+
+
+            //console.log(hat_orig_x, hat_orig_y);
+
+            
+            
+            Draggable.create('#hat');
+            Draggable.create('#scarf');
+            Draggable.create('#skirt');
+
+            const reset = document.getElementById('reset');
+    
+
+            reset.addEventListener('click', function() {
+            
+                gsap.to(hat,1, {x:0, y: 0});
+                gsap.to(scarf,1,{x:0,y:0});
+                gsap.to(skirt, 1, {x:0, y:0});
+            
+            })
+
+        </script>
     </body>
 </html>
