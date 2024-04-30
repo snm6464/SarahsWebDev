@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 * {
     margin: 0;
     padding: 0;
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header {
@@ -54,6 +58,7 @@ header h1 {
     text-align: center;
     width: 100%;
     padding: 1.5rem 0;
+    color: white;
 }
 
 .hap-bar {
@@ -68,22 +73,26 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: right;
+    
   
     
 }
 .home img {
     /* idth: 100%; */
     height: 100%;
+    background: white;
     
     
 }
 
 .reset {
     width: 50%;
+    
 }
 
 .reset img {
     height: 100%;
+    background: white;
 }
 
 .hunger {
@@ -113,8 +122,7 @@ header h1 {
 }
 
 .treat-wrapper {
-    width: 25%;
-    background-color: pink;
+    width: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,11 +135,16 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background: white;
+}
+
+.treat img {
+    width: 100%;
 }
 
 .pet-wrapper {
-    width: 25%;
-    background-color: pink;
+    width: 15%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,7 +156,12 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background: white;
     
+}
+
+.pet img {
+    width: 100%;
 }
 
 .clothing-wrapper {
@@ -168,13 +186,17 @@ header h1 {
     right: 10vw;
 }
 
-body {
-    /* background image = barn */
-}
+
 
 .treat img, .pet img, .reset img, .home img {
     border: 1px solid black;
     cursor: pointer;
+}
+
+body {
+    background: url('https://www.shutterstock.com/image-vector/farm-stable-barn-interior-sand-600nw-2042075618.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media screen and (max-width:768px) {
@@ -198,8 +220,8 @@ body {
     }
 
     .treat-wrapper {
-        width: 10%;
-        background-color: pink;
+        width: 15%;
+        /* background-color: pink; */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -215,7 +237,7 @@ body {
     }
 
     .pet-wrapper {
-        width: 10%;
+        width: 15%;
     }
 
     .pet img {
@@ -227,7 +249,7 @@ body {
     }
 
     .clothing {
-        width: 20%;
+        width: 40%;
     }
 
     .clothing img {
@@ -240,6 +262,21 @@ body {
         width: 100%;
         padding: 1rem 0;
     }
+
+
+    #hat {
+        left: 5vw;
+    }
+
+    #scarf {
+        left: 30vw;
+    }
+
+    #skirt {
+        right: 5vw;
+    }
+
+
 
     
 
